@@ -1,0 +1,124 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+  <a href="javascript:location.reload()">Restart</a> (because there's no backwards navigation yet)
+
+  <form id="step--welcome" class="step">
+    <h1>Welcome</h1>
+    <p>
+      It should take about 10 minutes to complete the whole application. If you aren’t sure about
+      any questions - that’s okay! Do your best and we’ll work with you to clarify later. Let’s get
+      started.
+    </p>
+    <input class="js-trigger-transition" type="submit" value="Continue">
+  </form>
+
+  <form id="step--residency" class="step">
+    <fieldset>
+      <legend>Do you currently reside in Michigan?</legend>
+
+      <label>
+        <input name="isStateResident" type="radio" value="yes" />
+        Yes
+      </label>
+
+      <label>
+        <input name="isStateResident" type="radio" value="no" />
+        No
+      </label>
+    </fieldset>
+
+    <input class="js-trigger-transition" type="submit" value="Continue">
+  </form>
+
+  <div id="step--nonResident" class="step">
+    <p>This site is for Michigan residents only. To apply for coverage in your state:</p>
+    <ul>
+      <li>
+        <a href="https://healthcare.gov">Visit Healthcare.gov for health coverage</a>
+      </li>
+      <li>
+        <a href="https://FNS.USDA.gov">Visit FNS.USDA.gov for food assistance</a>
+      </li>
+    </ul>
+  </div>
+
+  <form id="step--profile" class="step">
+    <label>
+      What's your full name
+      <input type="text" name="fullName" />
+    </label>
+
+    <input class="js-trigger-transition" type="submit" value="Continue">
+  </form>
+
+  <form id="step--livingSituation" class="step">
+    <fieldset>
+      <legend>What's your current living situation?</legend>
+
+      <label>
+        <input name="livingSituation" type="radio" value="stable" />
+        Stable address
+      </label>
+
+      <label>
+        <input name="livingSituation" type="radio" value="temporary" />
+        Temporary address
+      </label>
+
+      <label>
+        <input name="livingSituation" type="radio" value="homeless" />
+        Homeless
+      </label>
+    </fieldset>
+
+    <input class="js-trigger-transition" type="submit" value="Continue">
+  </form>
+
+  <form id="step--homeAddress" class="step">
+    <label>
+      Home address
+      <input type="text" name="homeAddress" />
+    </label>
+
+    <fieldset>
+      <legend>Is this also your mailing address?</legend>
+
+      <label>
+        <input name="mailingSameAsHomeAddress" type="radio" value="yes" />
+        Yes
+      </label>
+
+      <label>
+        <input name="mailingSameAsHomeAddress" type="radio" value="no" />
+        No
+      </label>
+    </fieldset>
+
+    <input class="js-trigger-transition" type="submit" value="Continue">
+  </form>
+
+  <form id="step--mailingAddress" class="step">
+    <label>
+      Tell us where to send you postal mail.
+      <input type="text" name="mailingAddress" />
+    </label>
+
+    <input class="js-trigger-transition" type="submit" value="Continue">
+  </form>
+
+
+  <strong>Active State</strong>
+  <pre><code class="statex-debug"></code></pre>
+  <strong>State machine config</strong>
+  <pre><code class="statex-machine-config"></code></pre>
+
+  <script src="https://unpkg.com/xstate@next/dist/xstate.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>

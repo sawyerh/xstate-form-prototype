@@ -1,0 +1,34 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 30px;
+}
+
+code {
+  background: #eee;
+  color: #666;
+  display: block;
+  padding: 10px;
+  margin: 0 0 20px;
+}
+
+input,
+fieldset {
+  margin: 10px 0;
+}
+
+input[type="submit"],
+input[type="text"] {
+  display: block;
+}
+
+.step {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  margin: 20px 20px 60px;
+  max-width: 500px;
+  display: none;
+}
+
+.step--active {
+  display: block;
+}
