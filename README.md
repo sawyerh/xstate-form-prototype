@@ -4,6 +4,10 @@ This is a super simple multi-step form prototype using [StateX](https://xstate.j
 
 **[View the demo here](https://sawyerh.github.io/statex-form-prototype/index.html)**
 
+-----
+
 ![Demo](.github/demo.gif)
+
+-----
 
 ![Diagram](.github/diagram.png)
