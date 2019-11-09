@@ -7,3 +7,7 @@ This is a super simple multi-step form prototype using [StateX](https://xstate.j
 1. Download the repo
 1. Open `index.html` in the browser.
 1. That's it.
+
+![Demo](.github/demo.gif)
+
+![Diagram](.github/diagram.png)
