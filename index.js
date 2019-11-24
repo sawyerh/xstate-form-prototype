@@ -54,7 +54,7 @@ const stateMachineConfig = {
     }
   },
   on: {
-    SUBMIT: {
+    SET_STATE: {
       // This currently only works with the @next version of StateX
       // https://github.com/davidkpiano/xstate/issues/644
       actions: "updateFormState"
@@ -100,7 +100,7 @@ function handleSubmit(event) {
   const formData = new FormData(form);
 
   // Update the state machine context to store the current form's values
-  service.send("SUBMIT", { payload: Object.fromEntries(formData) });
+  service.send("SET_STATE", { payload: Object.fromEntries(formData) });
 
   // Transition to the next screen
   service.send("CONTINUE");
