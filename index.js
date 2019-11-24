@@ -56,26 +56,26 @@ const stateMachineConfig = {
   on: {
     SUBMIT: {
       // This currently only works with the @next version of StateX
-      // and doesn't fully work in the StateX Visualizer due that that.
       // https://github.com/davidkpiano/xstate/issues/644
       actions: "updateFormState"
     }
   }
 };
 
-const conditions = {
+const actions = {
+  updateFormState: XState.assign((context, event) =>
+    Object.assign(context, event.payload)
+  )
+};
+
+const guards = {
   hasStableHousing: context => context.livingSituation === "stable",
   isStateResident: context => context.isStateResident === "yes",
   mailingSameAsHomeAddress: context =>
     context.mailingSameAsHomeAddress === "yes"
 };
 
-const machine = XState.Machine(stateMachineConfig, {
-  actions: {
-    updateFormState: (context, event) => Object.assign(context, event.payload)
-  },
-  guards: conditions
-});
+const machine = XState.Machine(stateMachineConfig, { actions, guards });
 
 const service = XState.interpret(machine)
   .onTransition(newState => {
@@ -141,4 +141,4 @@ machineDebugEl.innerHTML = `Machine(${JSON.stringify(
   stateMachineConfig,
   null,
   1
-)})`;
+)}, { actions, guards })`;
